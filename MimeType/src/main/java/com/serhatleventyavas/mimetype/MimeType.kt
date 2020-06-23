@@ -355,6 +355,6 @@ object MimeType {
     }
 
     fun getMimeTypeFromExtension(extension: String): String {
-        return mimeTypeMap.getOrDefault(extension, "")
+        return mimeTypeMap[extension] ?: ""
     }
 }
