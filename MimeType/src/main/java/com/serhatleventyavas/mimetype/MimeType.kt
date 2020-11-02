@@ -355,6 +355,10 @@ object MimeType {
     }
 
     fun getMimeTypeFromExtension(extension: String): String {
-        return mimeTypeMap[extension] ?: ""
+        val mimeType = mimeTypeMap.get(extension)
+        if (mimeType.isNullOrEmpty()) {
+            return ""
+        }
+        return mimeType
     }
 }
