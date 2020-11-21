@@ -1,7 +1,7 @@
 package com.serhatleventyavas.mimetype
 
 object MimeType {
-    // 
+    
     private val mimeTypeMap: HashMap<String, String> = HashMap()
 
     init {
