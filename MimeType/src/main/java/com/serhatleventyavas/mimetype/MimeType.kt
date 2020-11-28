@@ -1,5 +1,7 @@
 package com.serhatleventyavas.mimetype
 
+import java.lang.Exception
+
 object MimeType {
     
     private val mimeTypeMap: HashMap<String, String> = HashMap()
@@ -355,10 +357,14 @@ object MimeType {
     }
 
     fun getMimeTypeFromExtension(extension: String): String {
-        val mimeType = mimeTypeMap.get(extension)
-        if (mimeType.isNullOrEmpty()) {
+        try {
+            val mimeType = mimeTypeMap[extension]
+            if (mimeType.isNullOrEmpty()) {
+                return ""
+            }
+            return mimeType
+        } catch (exception: Exception) {
             return ""
         }
-        return mimeType
     }
 }
